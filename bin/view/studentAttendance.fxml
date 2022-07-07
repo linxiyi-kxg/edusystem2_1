@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.StudentController">
+   <center>
+      <AnchorPane prefHeight="524.0" prefWidth="677.0" style="-fx-background-color: #ffffff; -fx-border-color: blue; -fx-border-width: 1px;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="520.0" prefWidth="765.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="516.0" prefWidth="807.0">
+                     <children>
+                        <MenuButton fx:id="attendanceMonthConfirm" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="查看缺勤情况时间选择">
+                          <items>
+                            <MenuItem fx:id="absenceNearestOneMonthBtn" mnemonicParsing="false" onAction="#attendanceClick" style="-fx-font-size: 22px;" text="最近一个月缺勤次数" />
+                            <MenuItem fx:id="absenceNearestThreeMonthBtn" mnemonicParsing="false" onAction="#attendanceClick" style="-fx-font-size: 22px;" text="最近三个月缺勤次数" />
+                              <MenuItem fx:id="absenceNearestFiveMonthBtn" mnemonicParsing="false" onAction="#attendanceClick" style="-fx-font-size: 22px;" text="最近五个月缺勤次数" />
+                          </items>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </MenuButton>
+                        <BarChart fx:id="attendanceAbsence" prefHeight="428.0" prefWidth="743.0">
+                          <xAxis>
+                            <CategoryAxis fx:id="studentAttendanceLineXType" animated="false" label="考勤类型" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="absenceTimes" label="缺勤次数" side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children></AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="71.0" prefWidth="900.0" style="-fx-background-color: #eaf4ff; -fx-border-color: white; -fx-border-width: 1px;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="headTxt" alignment="CENTER" layoutX="383.0" layoutY="5.0" prefHeight="61.0" prefWidth="156.0" style="-fx-background-color: #c6e1ff;" text="家长端" textFill="#1d24ab" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="360.0" AnchorPane.topAnchor="5.0">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <VBox prefHeight="551.0" prefWidth="219.0" style="-fx-background-color: #eaf4ff; -fx-border-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="infoBtn" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#infoBtnClick" prefHeight="77.0" prefWidth="300.0" style="-fx-background-color: #3b82ff; -fx-border-color: white; -fx-border-width: 2px; -fx-background-radius: 25; -fx-border-radius: 25;" text="学生个人信息" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="growingBtn" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#growingBtnClick" prefHeight="77.0" prefWidth="300.0" style="-fx-background-color: #3b82ff; -fx-border-color: white; -fx-border-width: 2px; -fx-border-radius: 25; -fx-background-radius: 25;" text="学生成长档案" textFill="#fcf8f8">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="attendanceBtn" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#attendanceBtnClick" prefHeight="77.0" prefWidth="300.0" style="-fx-background-color: #003eb0; -fx-border-color: white; -fx-border-width: 2px; -fx-background-radius: 25; -fx-border-radius: 25;" text="学生考勤记录" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+            <Button fx:id="consumptionBtn" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#consumptionBtnClick" prefHeight="77.0" prefWidth="300.0" style="-fx-background-color: #3b82ff; -fx-border-color: white; -fx-border-width: 2px; -fx-background-radius: 25; -fx-border-radius: 25;" text="学生消费记录" textFill="#fcf8f8">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="scoreBtn" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#scoreBtnClick" prefHeight="77.0" prefWidth="300.0" style="-fx-background-color: #3b82ff; -fx-border-color: white; -fx-border-width: 2px; -fx-background-radius: 25; -fx-border-radius: 25;" text="学生学业画像" textFill="#fcf8f8">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <AnchorPane prefHeight="32.0" prefWidth="1250.0" style="-fx-background-color: #c1d7ff; -fx-border-width: 1px;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="logOut" layoutX="1103.0" layoutY="2.0" mnemonicParsing="false" onAction="#logOutClick" prefHeight="49.0" prefWidth="133.0" style="-fx-background-color: #00318a;" text="退出登录" textFill="#f5eeee" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="2.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="homeBtn" layoutX="57.0" layoutY="8.0" mnemonicParsing="false" onAction="#homeBtnClick" style="-fx-border-style: none; -fx-background-color: Transparent;" text="返回首页" textFill="#00318a" underline="true" AnchorPane.bottomAnchor="6.0" AnchorPane.topAnchor="6.0">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>
